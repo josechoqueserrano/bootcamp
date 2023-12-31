@@ -3,7 +3,7 @@ import axios from "axios";
 const Capital = ({ capital }) => {
     const  [dataCapital,setDataCapita] = useState();
     useEffect(()=>{
-        axios.get('http://api.weatherstack.com/current?access_key=3e0e2ab4e8ed1f25eeb26328bc027ca6&query='+capital)
+        axios.get('http://api.weatherstack.com/current?access_key={token}&query='+capital)
         .then(res=>{setDataCapita(res.data);console.log(res.data) }).catch((e)=> console.log('fail'))
     },[])
 
